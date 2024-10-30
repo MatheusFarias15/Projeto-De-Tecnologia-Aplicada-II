@@ -1,0 +1,27 @@
+Projeto De Tecnologia e Ciencia Aplicada II - Centro Universitario Senac 
+
+Este projeto, desenvolvido por alunos do 4° semestre de Engenharia da Computação, tem como objetivo principal criar um sistema de monitoramento de telas que seja capaz de 
+detectar mudanças inesperadas na interface do usuário e alertar o usuário sobre possíveis erros ou divergências.
+
+  
+Biliotecas utilizadas: 
+PyAutoGui (para reconhecimento de tela) 
+Os (Responsavel por direcionar comandos ao sistema operacional) 
+
+Dicas iniciais: 
+Ter o python instalado 
+instalar no prompt de comando os seguintes códigos: 
+pip install --upgrade Pillow
+pip install pyautogui
+pip install pyscreeze
+
+
+Como o código funciona? 
+
+Uma breve introdução ao rôbo feito: Inicialmente defina-se o caminho para o diretorio recomendamos colocar uma pasta separada para evitar conflitos de escrita, 
+após ser localizada ele procura a imagem a qual ele está designado a procurar e executa uma das funções propostas no nosso caso colocamos para clicar e escrever,
+caso você queira deixamos a documentação da biblioteca no final desse arquivo, o PyAutoGui entra em um While e procura a imagem na sua tela caso ele encontre ele vai clicar e prosseguir com os demais 
+comandos. 
+
+
+https://pyautogui.readthedocs.io/en/latest/install.html
