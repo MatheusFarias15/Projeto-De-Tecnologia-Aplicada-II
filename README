@@ -18,10 +18,11 @@ pip install pyscreeze
 
 Como o código funciona? 
 
-Uma breve introdução ao robô feito: Inicialmente defina-se o caminho para o diretorio recomendamos colocar uma pasta separada para evitar conflitos de escrita, 
-após ser localizada ele procura a imagem a qual ele está designado a procurar e executa uma das funções propostas no nosso caso colocamos para clicar e escrever,
-caso você queira deixamos a documentação da biblioteca no final desse arquivo, o PyAutoGui entra em um While e procura a imagem na sua tela caso ele encontre ele vai clicar e prosseguir com os demais 
-comandos.  
+Este projeto utiliza automação com Python e a biblioteca PyAutoGUI para implementar um sistema de reconhecimento de tela e interação automatizada com interfaces gráficas. O objetivo é simular e testar o comportamento do usuário em sistemas de saúde, verificando elementos visuais essenciais e executando ações repetitivas com precisão. Em sistemas de saúde, onde a consistência e a precisão são fundamentais, esse tipo de automação pode agilizar os processos de verificação, detectar erros e garantir que os componentes da interface gráfica estejam funcionando corretamente. O código identifica e interage com diferentes imagens na tela, simulando cliques, inserindo texto e realizando pesquisas, imitando as ações que um operador humano faria. Quando elementos não são encontrados, o sistema tenta novamente até atingir um limite de tentativas, e, caso o problema persista, exibe uma mensagem de alerta recomendando a revisão da interface. Essa automação contribui para aumentar a segurança e a eficiência dos processos, minimizando a necessidade de intervenção humana em tarefas repetitivas e sujeitas a erros.
 
 
 https://pyautogui.readthedocs.io/en/latest/install.html
+
+
+
+
