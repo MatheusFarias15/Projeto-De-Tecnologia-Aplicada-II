@@ -4,12 +4,12 @@ from time import sleep
 
 caminho = "C:\\Users\\mf056\\OneDrive\\Área de Trabalho\\Projeto-De-Tecnologia-Aplicada-II-main\\Teste de Tela para a bomba correta"
 botao = "Botao.png"
-botao2 = "Botao.png"
-botao3 = "Botao.png"
-botao4 = "Botao.png" 
+botao2 = "Botao2.png"
+botao3 = "Botao3.png"
+botao4 = "Botao4.png" 
 botao5 = "Botao.png"  
 MF = "MaisFuncoes.png"
-MF2 = "MaisFuncoes.png"
+MF2 = "MF.png"
 Pausar = "Pausar.png"
 Avancar = "Avancar.png"
 Alerta = "Alerta.png"
@@ -18,7 +18,7 @@ BotaoZerarVolume = "BotaoZerarVolume.png"
 BotaoSim = "BotaoSim.png"
 BotaoDetalhes = "BotaoDetalhes.png"
 BotaoProximo = "BotaoProximo.png"
-
+CancelarPausar = "CancelarPausar.png"
 
 
 if not os.path.exists(os.path.join(caminho, botao)):
@@ -128,7 +128,7 @@ while k < n:
         if local is not None:  
             pyautogui.moveTo(botao3, duration=0.8)  
             pyautogui.click()  
-            print("Botão 2 clicado.")
+            print("Botão 3 clicado.")
             break 
 
         k += 1  
@@ -143,15 +143,15 @@ while k < n:
 
 while k < n:
     try:
-        local = pyautogui.locateCenterOnScreen(botao4)
+        local = pyautogui.locateCenterOnScreen(botao3)
         if local is not None:  
-            pyautogui.moveTo(botao4, duration=0.8)  
+            pyautogui.moveTo(botao3, duration=0.8)  
             pyautogui.click()  
             print("Botão 2 clicado.")
             break 
 
         k += 1  
-        print(f'Tentativa {k}/{n} - Imagem {botao4} não encontrada, tentando novamente...')
+        print(f'Tentativa {k}/{n} - Imagem {botao3} não encontrada, tentando novamente...')
         sleep(0.25)  
 
     except pyautogui.ImageNotFoundException:
@@ -163,7 +163,7 @@ while k < n:
     try:
         local = pyautogui.locateCenterOnScreen(Alerta)
         if local is not None:  
-            pyautogui.moveTo(Alerta, duration=0.8)  
+            pyautogui.moveTo(local, duration=0.8)  
             pyautogui.click()  
             print("Botão 2 clicado.")
             break 
@@ -177,29 +177,12 @@ while k < n:
         k += 1
         sleep(0.25)
 
-while k < n:
-    try:
-        local = pyautogui.locateCenterOnScreen(botao5)
-        if local is not None:  
-            pyautogui.moveTo(botao5, duration=0.8)  
-            pyautogui.click()  
-            print("Botão 2 clicado.")
-            break 
-
-        k += 1  
-        print(f'Tentativa {k}/{n} - Imagem {botao5} não encontrada, tentando novamente...')
-        sleep(0.25)  
-
-    except pyautogui.ImageNotFoundException:
-        print("Imagem não encontrada na tela.")
-        k += 1
-        sleep(0.25)
 
 while k < n:
     try:
         local = pyautogui.locateCenterOnScreen(MF2)
         if local is not None:  
-            pyautogui.moveTo(MF2, duration=0.8)  
+            pyautogui.moveTo(local, duration=0.8)  
             pyautogui.click()  
             print("MF clicado.")
             break 
@@ -273,6 +256,7 @@ while k < n:
         if local is not None:  
             pyautogui.moveTo(BotaoDetalhes, duration=0.8)  
             pyautogui.click()  
+            
             print("Detalhes clicado.")
             break 
 
@@ -291,6 +275,10 @@ while k < n:
         if local is not None:  
             pyautogui.moveTo(BotaoProximo, duration=0.8)  
             pyautogui.click()  
+            sleep(1)
+            pyautogui.click()
+            sleep(1)
+            pyautogui.click()
             print("Proximo clicado.")
             break 
 
@@ -302,12 +290,6 @@ while k < n:
         print("Imagem não encontrada na tela.")
         k += 1
         sleep(0.25)
-
-
-
-
-
-
 
 
 if k == n:
