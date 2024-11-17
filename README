@@ -1,12 +1,12 @@
 Projeto De Tecnologia e Ciência Aplicada II - Centro Universitário Senac 
 
-Este projeto, desenvolvido por alunos do 4° semestre de Engenharia da Computação, tem como objetivo principal criar um sistema de monitoramento de telas que seja capaz de 
-detectar mudanças inesperadas na interface do usuário e alertar o usuário sobre possíveis erros ou divergências.
+Este projeto, desenvolvido por alunos do 4° semestre de Engenharia da Computação, tem como objetivo principal criar um sistema de monitoramento de telas que seja capaz de detectar mudanças inesperadas na interface do usuário e alertar o usuário sobre possíveis erros ou divergências.
 
   
 Biliotecas utilizadas: 
 PyAutoGui (para reconhecimento de tela) 
 Os (Responsável por direcionar comandos ao sistema operacional) 
+TensorFlow 
 
 Dicas iniciais: 
 Ter o Python instalado 
@@ -16,12 +16,11 @@ pip install pyautogui
 pip install pyscreeze
 
 
-Como o código funciona? 
+Link do artigo e do book com mais informações de como fuciona nosso código desenvolvido: 
 
-Este projeto utiliza automação com Python e a biblioteca PyAutoGUI para implementar um sistema de reconhecimento de tela e interação automatizada com interfaces gráficas. O objetivo é simular e testar o comportamento do usuário em sistemas de saúde, verificando elementos visuais essenciais e executando ações repetitivas com precisão. Em sistemas de saúde, onde a consistência e a precisão são fundamentais, esse tipo de automação pode agilizar os processos de verificação, detectar erros e garantir que os componentes da interface gráfica estejam funcionando corretamente. O código identifica e interage com diferentes imagens na tela, simulando cliques, inserindo texto e realizando pesquisas, imitando as ações que um operador humano faria. Quando elementos não são encontrados, o sistema tenta novamente até atingir um limite de tentativas, e, caso o problema persista, exibe uma mensagem de alerta recomendando a revisão da interface. Essa automação contribui para aumentar a segurança e a eficiência dos processos, minimizando a necessidade de intervenção humana em tarefas repetitivas e sujeitas a erros.
+Book : file:///C:/Users/mf056/Downloads/Projeto_De_Tecnologia_e_Ci%C3%AAncia_Aplicada_II___Book.pdf
 
-
-https://pyautogui.readthedocs.io/en/latest/install.html
+Artigo: 
 
 
 
