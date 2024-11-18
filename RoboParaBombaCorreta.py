@@ -27,7 +27,7 @@ os.chdir(caminho)
 
 n = 10
 k = 0
-
+sleep(8)
 while k < n:
     try:
         local = pyautogui.locateCenterOnScreen(botao)
@@ -255,8 +255,13 @@ while k < n:
         local = pyautogui.locateCenterOnScreen(BotaoDetalhes)
         if local is not None:  
             pyautogui.moveTo(BotaoDetalhes, duration=0.8)  
+            pyautogui.click() 
+            sleep(1) 
             pyautogui.click()  
-            
+            sleep(1)
+            pyautogui.click()
+            sleep(1)
+            pyautogui.click()
             print("Detalhes clicado.")
             break 
 
