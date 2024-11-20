@@ -2,7 +2,6 @@ Projeto De Tecnologia e Ciência Aplicada II - Centro Universitário Senac
 
 Este projeto, desenvolvido por alunos do 4° semestre de Engenharia da Computação, tem como objetivo principal criar um sistema de monitoramento de telas que seja capaz de detectar mudanças inesperadas na interface do usuário e alertar o usuário sobre possíveis erros ou divergências.
 
-  
 Biliotecas utilizadas: 
 PyAutoGui (para reconhecimento de tela) 
 Os (Responsável por direcionar comandos ao sistema operacional) 
@@ -14,13 +13,6 @@ instalar no prompt de comando os seguintes códigos:
 pip install --upgrade Pillow
 pip install pyautogui
 pip install pyscreeze
-
-
-Link do artigo e do book com mais informações de como fuciona nosso código desenvolvido: 
-
-Book : file:///C:/Users/mf056/Downloads/Projeto_De_Tecnologia_e_Ci%C3%AAncia_Aplicada_II___Book.pdf
-
-Artigo: 
 
 
 
