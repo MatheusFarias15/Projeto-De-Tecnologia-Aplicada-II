@@ -1,3 +1,6 @@
+# Zoom da pagina em 90%
+
+
 import pyautogui
 import os
 from time import sleep
@@ -27,6 +30,7 @@ os.chdir(caminho)
 
 n = 10
 k = 0
+
 sleep(8)
 while k < n:
     try:
@@ -298,4 +302,5 @@ while k < n:
 
 
 if k == n:
-    pyautogui.alert(text='Teste de tela concluído com sucesso as funções não estão funcionando corretamente recomendo verificar novamente', title ='Teste de tela ', button ='OK')  
+           
+    print("Teste de tela finalizado")
