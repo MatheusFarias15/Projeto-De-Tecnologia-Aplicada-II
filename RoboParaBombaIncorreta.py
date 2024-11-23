@@ -146,7 +146,7 @@ while k < n:
             sleep(0.8) 
             pyautogui.click()
             sleep(0.8) 
-            pyautogui.click()
+            
 
             print("Botão 1 clicado.")
             break 
