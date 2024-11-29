@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachable Machine Image Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <div>Teachable Machine Image Model</div>
+    <button type="button" onclick="init()">Start Webcam</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    
+    <hr>
+
+    <div>
+        <input type="file" id="imageUpload" accept="image/*" onchange="predictUploadedImage()" />
+        <div id="uploaded-image-container"></div>
+    </div>
+
+    <script type="text/javascript">
+        const URL = "https://teachablemachine.withgoogle.com/models/dgnfHgtPc/";
+
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // Load the model and metadata
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // Append elements to the DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+
+            // Create a div for each prediction class
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // Run the webcam image through the image model
+        async function predict() {
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }
+
+        // Function to predict the uploaded image
+        async function predictUploadedImage() {
+            const fileInput = document.getElementById("imageUpload");
+            const file = fileInput.files[0];
+
+            if (file) {
+                const image = document.createElement("img");
+                image.src = URL.createObjectURL(file);
+                image.onload = async function () {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 200;
+                    canvas.height = 200;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                    // Run prediction on the uploaded image
+                    const prediction = await model.predict(canvas);
+
+                    // Display the image and predictions
+                    const uploadedImageContainer = document.getElementById("uploaded-image-container");
+                    uploadedImageContainer.innerHTML = ""; // Clear previous image and results
+                    uploadedImageContainer.appendChild(image);
+                    labelContainer.innerHTML = ""; // Clear previous predictions
+                    for (let i = 0; i < maxPredictions; i++) {
+                        const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                        const resultDiv = document.createElement("div");
+                        resultDiv.innerHTML = classPrediction;
+                        labelContainer.appendChild(resultDiv);
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+</html>
