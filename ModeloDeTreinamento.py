@@ -9,7 +9,7 @@ np.set_printoptions(suppress=True)
 model = load_model("keras_Model.h5", compile=False)
 
 # Load the labels
-class_names = [line.strip() for line in open("labels.txt", "r").readlines()]
+class_names = open("labels.txt", "r").readlines()
 
 # CAMERA can be 0 or 1 based on default camera of your computer
 camera = cv2.VideoCapture(0)
@@ -37,7 +37,7 @@ while True:
     confidence_score = prediction[0][index]
 
     # Print prediction and confidence score
-    print("Class:", class_name, end="")
+    print("Class:", class_name[2:], end="")
     print("Confidence Score:", str(np.round(confidence_score * 100))[:-2], "%")
 
     # Listen to the keyboard for presses.

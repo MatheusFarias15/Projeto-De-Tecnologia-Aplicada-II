@@ -20,7 +20,7 @@ os.chdir(caminho)
 
 n = 10
 k = 0
-
+sleep(10)
 while k < n:
     try:
         local = pyautogui.locateCenterOnScreen(Botão)
